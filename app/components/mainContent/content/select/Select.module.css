@@ -1,0 +1,62 @@
+
+.customSelect{
+    width: 100%;
+    min-width: 155px;
+    height: 40px;
+    padding: 4px 6px 4px 14px;
+    font-family: Helvetica;
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 22px;
+    border: 1px solid #E0E0E0; 
+    border-radius: 8px;
+    background-color: transparent;
+    appearance: none; 
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    cursor: pointer;
+    outline: none;
+    position: relative;
+    -webkit-tap-highlight-color: transparent;
+    display: flex;
+    align-items: center;
+}
+.dropdown{
+    background-color: #FFFFFF;
+    border: 1px solid #4571E4;
+    border-radius: 8px;
+    height: 80px;
+    font-size: 14px;
+    font-weight: 300;
+    font-family: Helvetica;
+    padding: 10px 40px 10px 12px; 
+    position: absolute;
+    top: 45px;
+    left: 0;
+    right: 0;
+    z-index: 999;
+}
+.dropdownCheckbox{
+    display: flex;
+    align-items: center;
+}
+.dropdownCheckbox input{
+    display: none;
+}
+.checkMark{
+    border: 1px solid #E0E0E0; 
+    display: inline-block;
+    border-radius: 4px;
+    margin-right: 4px;
+    position: relative;
+    cursor: pointer;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+}
+
+.icon{
+    position: absolute;
+    right: 10px;
+    cursor: pointer;
+}

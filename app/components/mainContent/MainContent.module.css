@@ -1,0 +1,22 @@
+.baseWrap{
+    background-color: #FFFFFF;
+    padding: 24px;
+}
+
+.mainWrap{
+    min-width: 288px;
+    max-width: 1136px;
+    width: 100%;
+    height: auto;
+}
+
+.secondaryWrap{
+    /* border: 1px solid red; */
+    /* height: 500px; */
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+
+

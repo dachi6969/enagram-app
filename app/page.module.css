@@ -13,7 +13,7 @@
 }
 @media (min-width: 1024px) and (max-width: 1440px) {
     .mainLayout{
-        grid-template-columns: 240px 100vw;
+        grid-template-columns: 240px 1fr;
         grid-template-rows: 100vh;
     }
 }
