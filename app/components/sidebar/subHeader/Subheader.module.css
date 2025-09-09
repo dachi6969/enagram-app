@@ -1,0 +1,37 @@
+/* mobile first */
+
+.subHeader{
+    border-bottom: 1px solid #EDEDED;
+    padding: 10px;
+    height: 56px;
+    display: flex;
+    align-items: center;
+}
+
+.staticDropdown{
+    display: inline-flex;
+    gap: 4px;
+    align-items: center;
+    font-family: Helvetica;
+    font-weight: 700;
+    font-style: Bold;
+    font-size: 12px;
+    line-height: 20px;
+    letter-spacing: 0%;
+    cursor: pointer;
+}
+
+.dropdownLogo{
+    width: 16px;
+    height: 16px;
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+    .staticDropdown{
+        font-size: 16px;
+    }
+    .dropdownLogo{
+        width: 24px;
+        height: 24px;
+    }
+}

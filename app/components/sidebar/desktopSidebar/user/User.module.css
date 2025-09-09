@@ -1,0 +1,26 @@
+.menuFooter{
+    height: 60px;
+    border-top: 1px solid #9EB9FF33;
+    display: flex;
+    align-items: center;
+    padding: 14px;
+}
+
+.userDiv{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.userWrap{
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-family: Helvetica;
+    color: #FFFFFF;
+    font-weight: 400;
+    font-style: Regular;
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: 0%;
+}
