@@ -1,4 +1,4 @@
-
+"use client"
 import Logo from "../Logo/Logo";
 import styles from "./DesktopSidebar.module.css";
 import User from "./user/User";
@@ -8,11 +8,11 @@ import PdfIcon from "./pdfIcon/PdfIcon";
 import TextIcon from "./textIcon/TextIcon";
 import VoiceIcon from "./voiceIcon/VoiceIcon";
 import ArrowIcon from "./arrowIcon/ArrowIcon";
-import { JSX } from "react";
+
 
 type MenuItem = {
-    icon: JSX.Element;
-    title: string | JSX.Element;
+    icon: React.ReactNode;
+    title: React.ReactNode;
   };
 
 const menuItems: MenuItem[] = [

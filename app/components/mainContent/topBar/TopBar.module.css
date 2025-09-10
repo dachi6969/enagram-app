@@ -12,7 +12,7 @@
     min-width: 150px;
     border: none;
     border-radius: 6px;
-    background-color: #383A4899;
+    background-color: #4571E4;
     color: #FFFFFF;
     font-family: Helvetica;
     font-weight: 400;
@@ -26,13 +26,13 @@
     align-items: center;
     justify-content: center;
     gap: 4px;
+    cursor: pointer;
 }
 
 .menu{
     display: flex;
     flex-direction: column;
     gap: 10px;    
-    /* background-color: red; */
 }
 .selectWrap{
     display: flex;

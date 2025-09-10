@@ -1,3 +1,4 @@
+"use client"
 import TextIcon from "../desktopSidebar/textIcon/TextIcon";
 import styles from "./Subheader.module.css";
 

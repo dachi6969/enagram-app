@@ -11,8 +11,6 @@
 }
 
 .secondaryWrap{
-    /* border: 1px solid red; */
-    /* height: 500px; */
     display: flex;
     flex-direction: column;
     gap: 24px;

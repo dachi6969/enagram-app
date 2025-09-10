@@ -1,27 +1,103 @@
 "use client"
+
+import { useRef, useState } from "react";
 import styles from "./Content.module.css";
+import ReloadIcon from "./reloadIcon/ReloadIcon";
+import CrossIcon from "./crossIcon/CrossIcon";
+import WhileLoad from "./whileLoad/WhileLoad";
 
 export default function Content() {
-    return(
-        <div className={styles.content}>
-            <div className={styles.contentWrap}>
-                <div className={styles.leftBox}>
-                    <textarea placeholder="დაიწყე წერა..."/>
-                </div>
+  const leftRef = useRef<HTMLDivElement>(null);
+  const rightRef = useRef<HTMLDivElement>(null);
 
-                <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" className={styles.icon}>
-                <path d="M16 5.33325V26.6666" stroke="#323232" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                <path d="M10.6654 10.6666L16.0001 5.33325L21.3347 10.6666" stroke="#323232" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                <path d="M21.3347 21.3307L16.0001 26.6654L10.6654 21.3307" stroke="#323232" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                </svg>
+  const [leftText, setLeftText] = useState("");
+  const [rightText, setRightText] = useState("");
+  const [disabled,setDisabled] = useState<boolean>(false);
+  const [reload,setReload] = useState<boolean>(false);
 
-                <div className={styles.rightBox}>
-                    <textarea placeholder="დაიწყე წერა..."/>
-                </div>
-            </div>
-            <button>
-                შედარება
-            </button>
+  const handleLeftInput = () => {
+    if (leftRef.current) setLeftText(leftRef.current.innerText);
+  };
+
+  const handleRightInput = () => {
+    if (rightRef.current) setRightText(rightRef.current.innerText);
+  };
+
+  const compare = () => {
+    if (leftText === "" || rightText === "") return ; 
+    setDisabled(true);
+    setTimeout(() => {
+        const oldWords = leftText.split(/\s+/).filter(Boolean);
+        const newWords = rightText.split(/\s+/).filter(Boolean);
+      
+        const leftHTML = oldWords
+          .map((word) =>
+            !newWords.includes(word)
+              ? `<span style="background-color:#ffcccc">${word}</span>&nbsp;`
+              : word + " "
+          )
+          .join("");
+      
+        const rightHTML = newWords
+          .map((word) =>
+            !oldWords.includes(word)
+              ? `<span style="background-color:#ccffcc">${word}</span>&nbsp;`
+              : word + " "
+          )
+          .join("");
+      
+        if (leftRef.current) leftRef.current.innerHTML = leftHTML;
+        if (rightRef.current) rightRef.current.innerHTML = rightHTML;
+
+        setDisabled(false);
+        if (reload) return
+        else{
+            setReload(true)
+        }
+    },5000)
+  };
+  
+
+  return (
+    <div className={styles.content}>
+      
+    <div className={styles.contentWrap}>
+        <div className={styles.leftBox}>
+          <div
+            ref={leftRef}
+            className={styles.editable}
+            contentEditable
+            suppressContentEditableWarning
+            data-placeholder="დაიწყე წერა..."
+            onInput={handleLeftInput}
+          ></div>
         </div>
-    )
-};
+
+        <CrossIcon className={styles.icon}/>
+
+        <div className={styles.rightBox}>
+          <div
+            ref={rightRef}
+            className={styles.editable}
+            contentEditable
+            suppressContentEditableWarning
+            data-placeholder="დაიწყე წერა..."
+            onInput={handleRightInput}
+          ></div>
+        </div>
+        
+        { disabled &&  <WhileLoad />}
+      </div>
+
+        
+
+        <button 
+        onClick={compare}
+        disabled={disabled}
+        >
+            { reload &&<ReloadIcon /> }
+            შედარება
+        </button>
+    </div>
+  );
+}

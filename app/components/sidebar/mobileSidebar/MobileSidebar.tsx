@@ -1,3 +1,4 @@
+"use client"
 import Logo from "../Logo/Logo";
 import MenuIcon from "../MenuIcon/MenuIcon";
 import Subheader from "../subHeader/Subheader";
