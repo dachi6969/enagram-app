@@ -3,7 +3,7 @@ type IconProps = {
     className?: string;
 }
 
-export default function ({className}: IconProps) {
+export default function TextIcon({className}: IconProps) {
     return(
         <svg width={24} height={24} className={className}
         viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">

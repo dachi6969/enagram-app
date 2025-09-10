@@ -3,7 +3,7 @@ type IconProps = {
     className: string
 }
 
-export default function ({className}: IconProps) {
+export default function CrossIcon({className}: IconProps) {
     return(
         <svg width="32" height="32" viewBox="0 0 32 32" fill="none" className={className}>
         <path d="M16 5.33325V26.6666" stroke="#323232" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>

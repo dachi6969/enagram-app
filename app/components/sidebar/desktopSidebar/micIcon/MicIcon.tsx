@@ -1,6 +1,6 @@
 
 
-export default function () {
+export default function MicIcon() {
     return(
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M12 3C11.2044 3 10.4413 3.27092 9.87868 3.75315C9.31607 4.23539 9 4.88944 9 5.57143V12.4286C9 13.1106 9.31607 13.7646 9.87868 14.2468C10.4413 14.7291 11.2044 15 12 15C12.7956 15 13.5587 14.7291 14.1213 14.2468C14.6839 13.7646 15 13.1106 15 12.4286V5.57143C15 4.88944 14.6839 4.23539 14.1213 3.75315C13.5587 3.27092 12.7956 3 12 3Z" stroke="white" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>

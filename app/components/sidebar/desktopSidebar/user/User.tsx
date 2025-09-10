@@ -1,3 +1,4 @@
+"use client"
 import styles from "./User.module.css";
 
 const User = () => {
